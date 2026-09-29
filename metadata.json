@@ -1,0 +1,6 @@
+{
+  "name": "AttendEase",
+  "description": "A modern, fast, offline-first flash-card style attendance web app for teachers with Google Sheets and Apps Script synchronization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

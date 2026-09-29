@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --accent: #5c7cfa;
+    --accent-rgb: 92, 124, 250;
+    --accent-soft: rgba(92, 124, 250, 0.12);
+    --accent-softer: rgba(92, 124, 250, 0.05);
+    --accent-border: rgba(92, 124, 250, 0.22);
+    --surface-tint: rgba(92, 124, 250, 0.035);
+    --font-display: 'Plus Jakarta Sans', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    background-color: #f7f8fa;
+    color: #334155;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .dark body {
+    background-color: #111622;
+    color: #cbd5e1;
+  }
+
+  h1, h2, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.app-canvas {
+  background-color: #f6f7fb;
+  background-image:
+    radial-gradient(at 15% 10%, rgba(var(--accent-rgb), 0.08) 0px, transparent 55%),
+    radial-gradient(at 85% 90%, rgba(var(--accent-rgb), 0.06) 0px, transparent 55%);
+}
+
+.dark .app-canvas {
+  background-color: #111622;
+  background-image:
+    radial-gradient(at 15% 10%, rgba(var(--accent-rgb), 0.12) 0px, transparent 55%),
+    radial-gradient(at 85% 90%, rgba(var(--accent-rgb), 0.07) 0px, transparent 55%);
+}
+
+.soft-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(var(--accent-rgb), 0.14);
+  box-shadow: 0 4px 20px -4px rgba(var(--accent-rgb), 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  backdrop-filter: blur(12px);
+}
+
+.dark .soft-card {
+  background-color: rgba(24, 32, 48, 0.85);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(var(--accent-rgb), 0.14);
+  box-shadow: 0 4px 20px -4px rgba(var(--accent-rgb), 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background-color: rgba(24, 32, 48, 0.85);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.25);
+}
+
+.accent-bg {
+  background-color: var(--accent);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-soft-bg {
+  background-color: var(--accent-soft);
+}
+
+.accent-softer-bg {
+  background-color: var(--accent-softer);
+}
+
+.accent-border {
+  border-color: var(--accent-border);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
